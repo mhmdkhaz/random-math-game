@@ -1,0 +1,367 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  /* font-family: "Texturina", serif; */
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.boxWrong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.8);
+  position: absolute;
+  /* opacity: 0; */
+  visibility: hidden;
+  z-index: 5;
+}
+
+.boxWrong .wrong {
+  background-color: #1a374d;
+  width: 500px;
+  height: 300px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.boxWrong .wrong h1 {
+  color: #ff3333;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 1.8px;
+}
+
+.boxWrong .wrong p {
+  color: #b1d0e0;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 10px;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+}
+
+.boxWrong .wrong .contentScore,
+.boxWrong .wrong .contentCorectAnswer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.boxWrong .wrong .contentScore span,
+.boxWrong .wrong .contentCorectAnswer span {
+  color: #68e8e3;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.boxWrong .wrong button {
+  margin: auto;
+  all: unset;
+  color: #68e8e3;
+  background-color: #406882;
+  padding: 15px 35px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  -webkit-transform: translate(-50%, 20px);
+  -moz-transform: translate(-50%, 20px);
+  -ms-transform: translate(-50%, 20px);
+  -o-transform: translate(-50%, 20px);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+section .mathGame {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- start in choose difclult and after check level ----------------- */
+.contentBoxAfterClickBeforeClick {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+section .mathGame .chooseDifclut {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+section .mathGame .chooseDifclut figure img,
+section .mathGame .timerDivAfterCheckLevel figure img {
+  width: 200px;
+  /* height: 500px; */
+}
+
+section .mathGame .chooseDifclut h1,
+section .mathGame .timerDivAfterCheckLevel h1 {
+  color: #406882;
+  text-transform: uppercase;
+  margin: 35px 0;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1.3px;
+}
+
+section .mathGame .chooseDifclut .difcultBtn {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+section .mathGame .chooseDifclut .difcultBtn button {
+  all: unset;
+  border: 2px solid #406882;
+  padding: 10px 25px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  text-transform: capitalize;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+}
+
+section .mathGame .chooseDifclut .difcultBtn button:hover {
+  background-color: #406882;
+  color: #b1d0e0;
+}
+
+section .mathGame .chooseDifclut h4 {
+  margin: 35px 0;
+  color: #406882;
+  text-transform: capitalize;
+}
+/* ------------- end choose difclut ---------------- */
+
+/* --------------- start after chdeck leve --------------- */
+section .mathGame .timerDivAfterCheckLevel {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  /* overflow: hidden; */
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+section .mathGame .timerDivAfterCheckLevelActive {
+  top: 0;
+  opacity: 1;
+}
+/* --------------- edn after chdeck leve --------------- */
+
+/* --------- box question ------------- */
+section .mathGame .question {
+  background: rgb(64, 103, 129);
+  background: linear-gradient(
+    102deg,
+    rgba(64, 103, 129, 0.8128501400560224) 46%,
+    rgba(26, 55, 77, 0.7036064425770308) 66%
+  );
+  display: none;
+  height: 100vh;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+section .mathGame .question .boxQuestion {
+  border: 2px solid #b1d0e0;
+  width: 60%;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+section .mathGame .question .boxQuestion {
+}
+
+section .mathGame .question .boxQuestion .questionNumber {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 25px;
+  color: #1a374d;
+  font-weight: 900;
+}
+
+section .mathGame .question .boxQuestion .line {
+  background-color: #b1d0e0;
+  height: 1px;
+  width: 98%;
+  margin: auto;
+}
+
+section .mathGame .question .boxQuestion .answers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 10px 0;
+}
+
+section .mathGame .question .boxQuestion .answers div {
+  background-color: #2b5472;
+  width: 80%;
+  text-align: center;
+  margin: 25px 0;
+  padding: 10px 0;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+section .mathGame .question .boxQuestion .answers div:hover {
+  background-color: #1a374d;
+}
+
+section .mathGame .question .boxQuestion .scoreCounter {
+  margin: 35px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+section .mathGame .question .boxQuestion .scoreCounter .counter,
+section .mathGame .question .boxQuestion .scoreCounter .score {
+  color: #b1d0e0;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+section .mathGame .question .boxQuestion .scoreCounter .score span,
+section .mathGame .question .boxQuestion .scoreCounter .counter span {
+  color: #1a374d;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* ---------------------- here after start game -------------------------- */
+section .mathGame .questionAfterChoose {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+/* ---------------------------- media responsive ------------------- */
+
+@media only screen and (max-width: 600px) {
+  body {
+    background: rgb(64, 103, 129);
+    background: linear-gradient(
+      102deg,
+      rgba(64, 103, 129, 0.8128501400560224) 46%,
+      rgba(26, 55, 77, 0.7036064425770308) 66%
+    );
+  }
+  /* start wrong */
+  .boxWrong .wrong {
+    width: 80vw;
+  }
+  /* end wrong */
+  /* start all math */
+  section .mathGame {
+    flex-direction: column-reverse;
+    height: 100%;
+    padding: 10px;
+  }
+  .timeGame {
+    color: #b1d0e0;
+    text-transform: capitalize;
+  }
+  /* start in  */
+  section .mathGame .timerDivAfterCheckLevel {
+    justify-content: flex-start;
+  }
+  section .mathGame .timerDivAfterCheckLevel figure img,
+  section .mathGame .timerDivAfterCheckLevel h1 {
+    display: none;
+  }
+  /* start question and box question */
+  section .mathGame .question {
+    width: 100%;
+    background: none;
+    padding: 10px;
+  }
+  section .mathGame .question .boxQuestion {
+    width: 80%;
+  }
+  /* start question and box question */
+}
+
+/* @media only screen (min-width: 600px) and (min-width: 768px) {
+}
+
+@media only screen (min-width: 992px) and (min-width: 1200px) {
+} */

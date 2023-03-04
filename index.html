@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Texturina:ital,opsz,wght@1,12..72,100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <!-- the wrong boxes -->
+      <div class="boxWrong">
+        <div class="wrong">
+          <h1>wrong</h1>
+          <p>your lost the game</p>
+          <div class="contentScore">
+            <p>the score:</p>
+            <span class="scoreWrong"></span>
+          </div>
+          <div class="contentCorectAnswer">
+            <p>the answer is:</p>
+            <span class="corectAnswer"></span>
+          </div>
+          <button class="again">start again</button>
+        </div>
+      </div>
+      <!-- end wrong boxes -->
+      <!-- math game -->
+      <div class="mathGame">
+        <div class="contentBoxAfterClickBeforeClick">
+          <div class="chooseDifclut">
+            <figure>
+              <img src="img/undraw_check_boxes_re_v40f.svg" alt="" />
+            </figure>
+            <h1>choose difficult</h1>
+            <div class="difcultBtn">
+              <button class="level easy">easy</button>
+              <button class="level medium">medium</button>
+              <button class="level hard">hard</button>
+            </div>
+          </div>
+          <!-- after choose level -->
+          <div class="timerDivAfterCheckLevel">
+            <figure>
+              <img src="img/undraw_time_management_re_tk5w.svg" alt="" />
+            </figure>
+            <h1>Let's get started</h1>
+            <h4 class="timeGame">
+              time game: <span class="minute">0</span>:<span class="second"
+                >0</span
+              >
+            </h4>
+          </div>
+        </div>
+        <!-- box question -->
+        <div class="question">
+          <div class="boxQuestion">
+            <div class="questionNumber">
+              <span class="numOne"></span> <span class="proces"></span>
+              <span class="numTow"></span>
+            </div>
+            <div class="line"></div>
+            <div class="answers">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="line"></div>
+            <div class="scoreCounter">
+              <h4 class="counter">counter: <span>0</span></h4>
+              <h4 class="score">score: <span>0</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end math game -->
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
